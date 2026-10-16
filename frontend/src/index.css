@@ -85,13 +85,50 @@ body {
   display: none;
 }
 
+.onboarding-badge-icon {
+  flex: 0 0 auto;
+}
+
 img,
 video {
   -webkit-user-drag: none;
 }
 
-/* Phones: stop iOS Safari zooming into inputs, and kill tap flash. */
 @media (max-width: 768px) {
   input:not([type="range"]):not([type="file"]) { font-size: 16px; }
 }
+
+@media (max-height: 640px) {
+  .onboarding-shell {
+    padding-top: max(20px, calc(20px + env(safe-area-inset-top, 0px)));
+    padding-bottom: max(16px, calc(16px + env(safe-area-inset-bottom, 0px)));
+  }
+
+  .onboarding-title {
+    font-size: 34px;
+  }
+
+  .onboarding-description {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .onboarding-art {
+    margin-block: 12px;
+  }
+
+  .onboarding-art-card {
+    height: 128px;
+  }
+
+  .onboarding-badges {
+    margin-bottom: 16px;
+  }
+
+  .onboarding-badge-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 * { -webkit-tap-highlight-color: transparent; }

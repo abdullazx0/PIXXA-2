@@ -23,28 +23,28 @@ export const Onboarding: React.FC = () => {
   const showDenied = attempted && permission === "denied" && !loading;
 
   return (
-    <div className="min-h-[100dvh] bg-black flex flex-col justify-between px-6 pt-[calc(48px+env(safe-area-inset-top,0px))] pb-[calc(32px+env(safe-area-inset-bottom,0px))] relative overflow-hidden">
+    <div className="onboarding-shell min-h-[100dvh] bg-black flex flex-col justify-between px-6 pt-[calc(48px+env(safe-area-inset-top,0px))] pb-[calc(32px+env(safe-area-inset-bottom,0px))] relative overflow-x-clip">
       {/* ambient glass orbs, purely decorative */}
       <div className="pointer-events-none absolute -top-10 -right-16 w-56 h-56 rounded-full bg-white/[0.05] blur-3xl" />
       <div className="pointer-events-none absolute top-1/3 -left-16 w-40 h-40 rounded-full bg-white/[0.04] blur-3xl" />
 
       <div className="relative z-10">
-        <h1 className="text-white text-[38px] leading-[1.08] font-semibold tracking-tight">
+        <h1 className="onboarding-title text-white text-[38px] leading-[1.08] font-semibold tracking-tight">
           Your
           <br />
           Memories,
           <br />
           Your Space
         </h1>
-        <p className="text-white/50 text-[15px] leading-relaxed mt-4 max-w-[280px]">
+        <p className="onboarding-description text-white/50 text-[15px] leading-relaxed mt-4 max-w-[280px]">
           {showDenied
             ? "We couldn't access your media that time. You can try again, or import photos and videos manually below."
             : "Give access to your photos and videos to view, organize and enjoy them in one place."}
         </p>
       </div>
 
-      <div className="relative z-10 flex justify-center my-10">
-        <div className="relative w-52 h-40">
+      <div className="onboarding-art relative z-10 flex justify-center my-10">
+        <div className="onboarding-art-card relative w-52 h-40">
           <div className="absolute inset-0 translate-x-5 -translate-y-3 rotate-6 glass-panel rounded-2xl" />
           <div className="absolute inset-0 -translate-x-4 translate-y-1 -rotate-3 glass-panel rounded-2xl" />
           <div className="absolute inset-0 glass-panel-strong rounded-2xl flex items-center justify-center">
@@ -56,7 +56,7 @@ export const Onboarding: React.FC = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="grid grid-cols-3 gap-2 mb-8 text-center">
+        <div className="onboarding-badges grid grid-cols-3 gap-2 mb-8 text-center">
           <Badge icon={ShieldCheck} label="Stays on your device" />
           <Badge icon={Lock} label="Private & Secure" />
           <Badge icon={HardDrive} label="We don't upload anything" />
@@ -97,7 +97,7 @@ export const Onboarding: React.FC = () => {
 
 const Badge: React.FC<{ icon: React.ElementType; label: string }> = ({ icon: Icon, label }) => (
   <div className="flex flex-col items-center gap-2">
-    <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center">
+    <div className="onboarding-badge-icon w-10 h-10 rounded-full glass-panel flex items-center justify-center">
       <Icon size={16} className="text-white/70" />
     </div>
     <span className="text-white/45 text-[10.5px] leading-tight">{label}</span>
