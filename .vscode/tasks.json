@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Backend: runserver", "type": "shell", "command": "cd backend && python manage.py runserver 8000", "problemMatcher": [] },
+    { "label": "Frontend: dev", "type": "shell", "command": "cd frontend && npm run dev", "problemMatcher": [] },
+    { "label": "Run PIXXA (backend + frontend)", "dependsOn": ["Backend: runserver", "Frontend: dev"], "problemMatcher": [] }
+  ]
+}
